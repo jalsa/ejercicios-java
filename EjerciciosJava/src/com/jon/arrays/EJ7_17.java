@@ -7,7 +7,7 @@ public class EJ7_17 {
 		//int array[] = {0, 1, 2, 3, 4, 4, 3, 2, 1, 0};
 		int cant = array.length;
 		boolean capicua = true;
-		for (int i=0; i<10; i++) {
+		for (int i=0; i<array.length; i++) {
 			int x = (int) (10*Math.random()+1);
 			array[i] = x;
 			System.out.println(x);
