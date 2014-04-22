@@ -11,7 +11,7 @@ public class EJ7_16 {
 		}
 		maximo = array[0];
 		minimo = array[0];
-		for (int j=0; j<10; j++) {
+		for (int j=0; j<array.length; j++) {
 			if (array[j] > maximo) {
 				maximo = array[j];
 			}
