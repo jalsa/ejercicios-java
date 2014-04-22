@@ -13,22 +13,27 @@ public class EJ6_15 {
 		Scanner entrada = new Scanner(System.in);
 		numero = entrada.nextInt();
 		while (intentos < 5 && !acertado) {
-			if (intentos == 4) {
-				System.out.println("Has fallado!");
+			intentos++;
+			if (intentos == 5) {
+				if (numero == x) {
+					System.out.println("Has acertado!");
+				}
+				else {
+					System.out.println("Has fallado!");
+				}	
 			}
-			else if (numero < x && intentos != 4) {
+			else if (numero < x) {
 				System.out.println("Introduce un nœmero mayor");
 				numero = entrada.nextInt();
 			}
-			else if (numero > x && intentos != 4) {
+			else if (numero > x) {
 				System.out.println("Introduce un nœmero menor");
 				numero = entrada.nextInt();
 			}
-			else if (numero == x && intentos != 4) {
+			else if (numero == x) {
 				System.out.println("Has acertado!");
 				acertado = true;
 			}
-			intentos++;
 		}
 	}
 }
