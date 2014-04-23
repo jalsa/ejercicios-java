@@ -5,9 +5,11 @@ import java.util.Vector;
 public class Primos {
 
 	private int x;
+	
 	public Primos(int x) {
 		this.x = x;
 	}
+	
 	public Vector<Integer> listaDePrimos() {
 		Vector<Integer> v = new Vector<Integer>();
 		for (int i=1; i<=this.x; i++) {
