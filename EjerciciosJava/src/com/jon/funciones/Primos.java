@@ -17,6 +17,7 @@ public class Primos {
 		}
 		return v;
 	}
+	
 	public boolean esPrimo(int x) {
 		int divisor = 2;
 		boolean primo = true;
