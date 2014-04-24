@@ -8,8 +8,7 @@ public class PruebaValidar {
 		String nif;
 		Scanner entrada = new Scanner(System.in);
 		nif = entrada.next();
-		ValidarDni v = new ValidarDni(nif);
-		if (v.validar()) {
+		if (ValidarDni.validar(nif)) {
 			System.out.println(nif.substring(0, 8));
 		}
 		else {
