@@ -28,9 +28,9 @@ public class ValidarDni {
 				valido = false;
 			}
 			else {
-				int resto = parseInt(cadena) % 23;
+				int resto = Integer.parseInt(cadena) % 23;
 	            char letraDni = letras[resto];
-	            if (letraDni != letra) {
+	            if (letraDni != letra.charAt(0)) {
 	            	valido = false;
 	            }
 			}
