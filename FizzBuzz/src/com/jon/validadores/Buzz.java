@@ -1,13 +1,17 @@
 package com.jon.validadores;
 
-public class Buzz {
+import com.jon.interfaces.IValidador;
+
+public class Buzz extends Generico{
+	public Buzz() {
+		super("Buzz");
+		// TODO Auto-generated constructor stub
+	}
+
 	private final String valor = "Buzz";
 	
 	public boolean validar(int num) {
 		return (num % 5 == 0);
 	}
 	
-	public String valor() {
-		return valor;
-	}
 }
