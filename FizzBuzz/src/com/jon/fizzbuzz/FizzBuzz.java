@@ -1,59 +1,45 @@
 package com.jon.fizzbuzz;
+import java.util.ArrayList;
 
-import com.jon.interfaces.IValidador;
+import com.jon.interfaces.InterfazValidador;
 import com.jon.validadores.Buzz;
 import com.jon.validadores.Fizz;
-import com.jon.validadores.Generico;
+import com.jon.validadores.Mozz;
 
 public class FizzBuzz {
 
-	public void inicializarValidadores() {
-		this.validador[0] = new Fizz();
-		this.validador[1] = new Buzz();
-	}
-
-	public Generico validador[] = new Generico[2];
+	 ArrayList<InterfazValidador> validadores;
+	 
+	 public FizzBuzz(){
+		 validadores = new ArrayList<InterfazValidador>();
+		 validadores.add(new Fizz());
+		 validadores.add(new Buzz());
+		 validadores.add(new Mozz());
+	 }
 
 	public String calcular(int num) {
-		this.inicializarValidadores();
 		String cadena = "";
-		boolean validado = false;
-		// Fizz fizz = new Fizz();
-		// Buzz buzz = new Buzz();
+		String cadena1;
 
-		for (int i = 1; i <= num; i++) {
-			
-			// if (i == 1) {
-			// cadena += Integer.toString(i);
-			// }
-			// else if (fizz.validar(i) && buzz.validar(i)) {
-			// cadena += " " + fizz.valor() + buzz.valor();
-			// }
-			// else if (fizz.validar(i)) {
-			// cadena += " " + fizz.valor();
-			// }
-			// else if (buzz.validar(i)) {
-			// cadena += " " + buzz.valor();
-			// }
-			// else {
-			// cadena += " " + Integer.toString(i);
-			// }
-			validado=false;
-			for (int j = 0; j < this.validador.length; j++) {
-				if (this.validador[j].validar(i)) {
-					cadena += this.validador[j].valor();
-					validado = true;
-				}
-
+		for (int i=1; i<=num; i++) {
+			if (i == 1) {
+				cadena += Integer.toString(i);
 			}
-			if (!validado){
-				cadena += i;
-				
+			else {
+				cadena1 = " ";
+				InterfazValidador inter;
+				for (int j=0; j<validadores.size(); j++) {
+					inter = validadores.get(j);
+					if (inter.validar(i)) {
+						cadena1 += inter.valor();
+					}
 				}
-			cadena += " ";
-
+				if (cadena1 == " ") {
+					cadena1 += Integer.toString(i);
+				}
+				cadena += cadena1;
+			}
 		}
-		cadena = cadena.substring(0, cadena.length() - 1);
 		return cadena;
 	}
 }
