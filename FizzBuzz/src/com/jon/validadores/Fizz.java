@@ -1,12 +1,8 @@
 package com.jon.validadores;
 
-import com.jon.interfaces.IValidador;
+import com.jon.interfaces.InterfazValidador;
 
-public class Fizz extends Generico{
-	public Fizz() {
-		super("Fizz");
-		// TODO Auto-generated constructor stub
-	}
+public class Fizz implements InterfazValidador {
 
 	private final String valor = "Fizz";
 	
@@ -14,5 +10,8 @@ public class Fizz extends Generico{
 		return (num % 3 == 0);
 	}
 	
+	public String valor() {
+		return valor;
+	}
 
 }
