@@ -1,22 +1,27 @@
 package com.jon.fizzbuzz;
 
+import com.jon.validadores.Buzz;
+import com.jon.validadores.Fizz;
+
 public class FizzBuzz {
 
 	public String calcular(int num) {
 		String cadena = "";
+		Fizz fizz = new Fizz();
+		Buzz buzz = new Buzz();
 		for (int i=1; i<=num; i++) {
 			if (i == 1) {
 				cadena += Integer.toString(i);
 			}
-			else if (i % 15 == 0) {
-				cadena += " FizzBuzz";
+			else if (fizz.validar(i) && buzz.validar(i)) {
+				cadena += " " + fizz.valor() + buzz.valor();
 			}
-			else if (i % 3 == 0) {
-				cadena += " Fizz";
+			else if (fizz.validar(i)) {
+				cadena += " " + fizz.valor();
 			}
-			else if (i % 5 == 0) {
-				cadena += " Buzz";
-			}
+			else if (buzz.validar(i)) {
+				cadena += " " + buzz.valor();
+			} 
 			else {
 				cadena += " " + Integer.toString(i);
 			}
