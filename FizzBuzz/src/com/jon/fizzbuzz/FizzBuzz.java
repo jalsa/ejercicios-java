@@ -1,6 +1,7 @@
 package com.jon.fizzbuzz;
 import java.util.ArrayList;
 
+import com.jon.excepciones.Excepcion;
 import com.jon.factories.ValidadorFactoria;
 import com.jon.interfaces.InterfazValidador;
 import com.jon.validadores.Buzz;
@@ -38,8 +39,12 @@ public class FizzBuzz {
 				InterfazValidador inter;
 				for (int j=0; j<validadores.size(); j++) {
 					inter = validadores.get(j);
-					if (inter.validar(i)) {
-						cadena1 += inter.valor();
+					try {
+						if (inter.validar(i)) {
+							cadena1 += inter.valor();
+						}
+					} catch (Excepcion e) {
+						e.printStackTrace();
 					}
 				}
 				if (cadena1 == " ") {

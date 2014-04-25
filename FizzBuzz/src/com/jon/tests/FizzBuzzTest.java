@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.jon.excepciones.Excepcion;
 import com.jon.factories.ValidadorFactoria;
 import com.jon.fizzbuzz.FizzBuzz;
 import com.jon.interfaces.InterfazValidador;
@@ -36,44 +37,56 @@ public class FizzBuzzTest {
 
 	@Test
 	public void testFizz() {
-		assertEquals("Fizz 1", false, validadores.get(0).validar(1));
-		assertEquals("Fizz 1", "Fizz", validadores.get(0).valor());
-		assertEquals("Fizz 2", false, validadores.get(0).validar(2));
-		assertEquals("Fizz 2", "Fizz", validadores.get(0).valor());
-		assertEquals("Fizz 3", true, validadores.get(0).validar(3));
-		assertEquals("Fizz 3", "Fizz", validadores.get(0).valor());
-		assertEquals("Fizz 4", false, validadores.get(0).validar(4));
-		assertEquals("Fizz 4", "Fizz", validadores.get(0).valor());
-		assertEquals("Fizz 5", false, validadores.get(0).validar(5));
-		assertEquals("Fizz 5", "Fizz", validadores.get(0).valor());
+		try {
+			assertEquals("Fizz 1", false, validadores.get(0).validar(1));
+			assertEquals("Fizz 1", "Fizz", validadores.get(0).valor());
+			assertEquals("Fizz 2", false, validadores.get(0).validar(2));
+			assertEquals("Fizz 2", "Fizz", validadores.get(0).valor());
+			assertEquals("Fizz 3", true, validadores.get(0).validar(3));
+			assertEquals("Fizz 3", "Fizz", validadores.get(0).valor());
+			assertEquals("Fizz 4", false, validadores.get(0).validar(4));
+			assertEquals("Fizz 4", "Fizz", validadores.get(0).valor());
+			assertEquals("Fizz 5", false, validadores.get(0).validar(5));
+			assertEquals("Fizz 5", "Fizz", validadores.get(0).valor());
+		} catch (Excepcion e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testBuzz() {
-		assertEquals("Buzz 1", false, validadores.get(1).validar(1));
-		assertEquals("Buzz 1", "Buzz", validadores.get(1).valor());
-		assertEquals("Buzz 2", false, validadores.get(1).validar(2));
-		assertEquals("Buzz 2", "Buzz", validadores.get(1).valor());
-		assertEquals("Buzz 3", false, validadores.get(1).validar(3));
-		assertEquals("Buzz 3", "Buzz", validadores.get(1).valor());
-		assertEquals("Buzz 4", false, validadores.get(1).validar(4));
-		assertEquals("Buzz 4", "Buzz", validadores.get(1).valor());
-		assertEquals("Buzz 5", true, validadores.get(1).validar(5));
-		assertEquals("Buzz 5", "Buzz", validadores.get(1).valor());
+		try {
+			assertEquals("Buzz 1", false, validadores.get(1).validar(1));
+			assertEquals("Buzz 1", "Buzz", validadores.get(1).valor());
+			assertEquals("Buzz 2", false, validadores.get(1).validar(2));
+			assertEquals("Buzz 2", "Buzz", validadores.get(1).valor());
+			assertEquals("Buzz 3", false, validadores.get(1).validar(3));
+			assertEquals("Buzz 3", "Buzz", validadores.get(1).valor());
+			assertEquals("Buzz 4", false, validadores.get(1).validar(4));
+			assertEquals("Buzz 4", "Buzz", validadores.get(1).valor());
+			assertEquals("Buzz 5", true, validadores.get(1).validar(5));
+			assertEquals("Buzz 5", "Buzz", validadores.get(1).valor());
+		} catch (Excepcion e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testMozz() {
-		assertEquals("Mozz 1", false, validadores.get(2).validar(1));
-		assertEquals("Mozz 1", "Mozz", validadores.get(2).valor());
-		assertEquals("Mozz 2", false, validadores.get(2).validar(2));
-		assertEquals("Mozz 2", "Mozz", validadores.get(2).valor());
-		assertEquals("Mozz 3", false, validadores.get(2).validar(3));
-		assertEquals("Mozz 3", "Mozz", validadores.get(2).valor());
-		assertEquals("Mozz 5", false, validadores.get(2).validar(5));
-		assertEquals("Mozz 5", "Mozz", validadores.get(2).valor());
-		assertEquals("Mozz 7", true, validadores.get(2).validar(7));
-		assertEquals("Mozz 7", "Mozz", validadores.get(2).valor());
+		try {
+			assertEquals("Mozz 1", false, validadores.get(2).validar(1));
+			assertEquals("Mozz 1", "Mozz", validadores.get(2).valor());
+			assertEquals("Mozz 2", false, validadores.get(2).validar(2));
+			assertEquals("Mozz 2", "Mozz", validadores.get(2).valor());
+			assertEquals("Mozz 3", false, validadores.get(2).validar(3));
+			assertEquals("Mozz 3", "Mozz", validadores.get(2).valor());
+			assertEquals("Mozz 5", false, validadores.get(2).validar(5));
+			assertEquals("Mozz 5", "Mozz", validadores.get(2).valor());
+			assertEquals("Mozz 7", true, validadores.get(2).validar(7));
+			assertEquals("Mozz 7", "Mozz", validadores.get(2).valor());
+		} catch (Excepcion e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Test
