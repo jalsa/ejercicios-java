@@ -1,4 +1,5 @@
 package com.jon.tests;
+
 import com.jon.validadores.Buzz;
 import com.jon.validadores.Fizz;
 import com.jon.validadores.Mozz;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.jon.factories.ValidadorFactoria;
 import com.jon.fizzbuzz.FizzBuzz;
 import com.jon.interfaces.InterfazValidador;
 
@@ -17,16 +19,19 @@ public class FizzBuzzTest {
 	FizzBuzz fb;
 	Fizz f;
 	Buzz b;
+	Mozz m;
 	ArrayList<InterfazValidador> validadores;
 
 	@Before
 	public void setUp() throws Exception {
 		fb = new FizzBuzz();
-		
+		f = ValidadorFactoria.getFizzValidador();
+		b = ValidadorFactoria.getBuzzValidador();
+		m = ValidadorFactoria.getMozzValidador();
 		validadores = new ArrayList<InterfazValidador>();
-		validadores.add(new Fizz());
-		validadores.add(new Buzz());
-		validadores.add(new Mozz());
+		validadores.add(f);
+		validadores.add(b);
+		validadores.add(m);
 	}
 
 	@Test

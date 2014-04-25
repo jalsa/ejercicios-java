@@ -1,6 +1,7 @@
 package com.jon.fizzbuzz;
 import java.util.ArrayList;
 
+import com.jon.factories.ValidadorFactoria;
 import com.jon.interfaces.InterfazValidador;
 import com.jon.validadores.Buzz;
 import com.jon.validadores.Fizz;
@@ -9,12 +10,19 @@ import com.jon.validadores.Mozz;
 public class FizzBuzz {
 
 	 ArrayList<InterfazValidador> validadores;
+	 Fizz f;
+	 Buzz b;
+	 Mozz m;
 
 	 public FizzBuzz(){
+		 
+		 f = ValidadorFactoria.getFizzValidador();
+		 b = ValidadorFactoria.getBuzzValidador();
+		 m = ValidadorFactoria.getMozzValidador();
 		 validadores = new ArrayList<InterfazValidador>();
-		 validadores.add(new Fizz());
-		 validadores.add(new Buzz());
-		 validadores.add(new Mozz());
+		 validadores.add(f);
+		 validadores.add(b);
+		 validadores.add(m);
 	 }
 
 	public String calcular(int num) {
