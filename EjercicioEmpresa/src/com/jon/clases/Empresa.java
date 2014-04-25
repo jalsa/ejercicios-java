@@ -55,4 +55,9 @@ public class Empresa implements InterfazEmpresa {
 		this.empleados.add(empl);
 		return empl;
 	}
+	
+	public void ascender(int numero, Ejecutivo e) {
+		this.empleados.add(numero, e);
+	}
+	
 }

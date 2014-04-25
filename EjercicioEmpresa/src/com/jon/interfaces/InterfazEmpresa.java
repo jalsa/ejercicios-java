@@ -1,5 +1,6 @@
 package com.jon.interfaces;
 
+import com.jon.clases.Ejecutivo;
 import com.jon.clases.Empleado;
 import com.jon.excepciones.Excepcion;
 
@@ -19,4 +20,5 @@ public interface InterfazEmpresa {
 	
 	public Empleado nuevoEmpleado(String nombre, int sueldo);
 	
+	public void ascender(int numero, Ejecutivo e);
 }

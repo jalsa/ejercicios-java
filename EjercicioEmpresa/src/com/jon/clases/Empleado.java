@@ -59,6 +59,7 @@ public class Empleado implements InterfazEmpleado{
 	
 	public void ascender() {
 		Ejecutivo ej = new Ejecutivo(this.empresa, this.nombre, this.sueldo, this.numero);
+		this.empresa.ascender(this.numero, ej);
 	}
 
 }
