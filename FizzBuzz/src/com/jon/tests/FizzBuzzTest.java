@@ -90,4 +90,5 @@ public class FizzBuzzTest {
 		assertEquals("FizzBuzz 15", "1 2 Fizz 4 Buzz Fizz Mozz 8 Fizz Buzz 11 Fizz 13 Mozz FizzBuzz", fb.calcular(15));
 		assertEquals("FizzBuzz 30", "1 2 Fizz 4 Buzz Fizz Mozz 8 Fizz Buzz 11 Fizz 13 Mozz FizzBuzz 16 17 Fizz 19 Buzz FizzMozz 22 23 Fizz Buzz 26 Fizz Mozz 29 FizzBuzz", fb.calcular(30));
 	}
+	
 }

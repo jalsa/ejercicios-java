@@ -13,5 +13,5 @@ public class Fizz implements InterfazValidador {
 	public String valor() {
 		return valor;
 	}
-
+	
 }

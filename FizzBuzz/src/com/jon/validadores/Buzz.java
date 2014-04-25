@@ -13,4 +13,5 @@ public class Buzz implements InterfazValidador {
 	public String valor() {
 		return valor;
 	}
+	
 }
