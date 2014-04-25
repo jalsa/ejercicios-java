@@ -23,7 +23,7 @@ public abstract class ValidarDni {
 			if (!Character.isLetter(cArray1[0])) {
 				valido = false;
 			}
-			else {
+			else { 
 				int resto = Integer.parseInt(cadena) % 23;
 	            char letraDni = letras[resto];
 	            if (letraDni != letra.charAt(0)) {

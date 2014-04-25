@@ -9,7 +9,7 @@ public class Fizz implements InterfazValidador {
 	public boolean validar(int num) {
 		return (num % 3 == 0);
 	}
-
+	
 	public String valor() {
 		return valor;
 	}

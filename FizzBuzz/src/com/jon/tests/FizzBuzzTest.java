@@ -22,7 +22,7 @@ public class FizzBuzzTest {
 	@Before
 	public void setUp() throws Exception {
 		fb = new FizzBuzz();
-
+		
 		validadores = new ArrayList<InterfazValidador>();
 		validadores.add(new Fizz());
 		validadores.add(new Buzz());
