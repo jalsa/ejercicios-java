@@ -6,6 +6,11 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero {
 		super(vidas);
 	}
 	
+	public void reiniciaPartida() {
+		super.reiniciaPartida();
+		// Pasar un numero par
+	}
+	
 	public boolean validaNumero(int numero) {
 		if (numero % 2 == 0) {
 			return true;

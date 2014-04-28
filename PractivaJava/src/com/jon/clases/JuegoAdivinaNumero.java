@@ -15,7 +15,6 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 	public JuegoAdivinaNumero(int vidas) {
 		super(vidas);
 		this.numeroSecreto = (int) (random.nextInt(11));
-		System.out.println(this.numeroSecreto);
 	}
 	
 	public void reiniciaPartida() {
