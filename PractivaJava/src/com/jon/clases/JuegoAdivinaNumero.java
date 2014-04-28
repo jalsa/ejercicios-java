@@ -2,9 +2,9 @@ package com.jon.clases;
 
 import java.util.Scanner;
 
-import com.jon.interfaces.InterfazJuego;
+import com.jon.interfaces.Jugable;
 
-public class JuegoAdivinaNumero extends Juego implements InterfazJuego {
+public class JuegoAdivinaNumero extends Juego implements Jugable {
 
 	private int numeroSecreto;
 	

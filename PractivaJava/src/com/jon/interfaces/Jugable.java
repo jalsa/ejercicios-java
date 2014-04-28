@@ -1,6 +1,6 @@
 package com.jon.interfaces;
 
-public interface InterfazJuego {
+public interface Jugable {
 	
 	public void muestraVidasRestantes();
 	

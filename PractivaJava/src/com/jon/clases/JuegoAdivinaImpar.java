@@ -14,7 +14,16 @@ public class JuegoAdivinaImpar extends JuegoAdivinaNumero {
 			System.out.println("El nœmero introducido no es impar");
 			return false;			
 		}
+	}
+	
+	@Override
+	public void muestraNombre() {
+		System.out.println("Adivina un nœmero impar");
+	}
 
+	@Override
+	public void muestraInfo() {
+		System.out.println("El juego consiste en adivinar un nœmero impar del 0 al 10. Para ello, tienes 3 intentos");
 	}
 
 }
