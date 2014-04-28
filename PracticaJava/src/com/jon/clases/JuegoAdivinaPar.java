@@ -2,13 +2,19 @@ package com.jon.clases;
 
 public class JuegoAdivinaPar extends JuegoAdivinaNumero {
 
+	private int numeroSecreto;
+	
 	public JuegoAdivinaPar(int vidas) {
 		super(vidas);
 	}
 	
 	public void reiniciaPartida() {
 		super.reiniciaPartida();
-		// Pasar un numero par
+		this.numeroSecreto = super.getNumeroSecreto();
+		if (this.numeroSecreto % 2 != 0) {
+			this.numeroSecreto++;
+		}
+		super.setNumeroSecreto(this.numeroSecreto);
 	}
 	
 	public boolean validaNumero(int numero) {

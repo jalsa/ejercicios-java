@@ -11,15 +11,16 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 	Date data = new Date();
 	Random random = new Random(data.getTime());
 	private int numeroSecreto;
+	private final int tamano = 10;
 	
 	public JuegoAdivinaNumero(int vidas) {
 		super(vidas);
-		this.numeroSecreto = (int) (random.nextInt(11));
+		this.numeroSecreto = (int) (random.nextInt(this.tamano+1));
 	}
 	
 	public void reiniciaPartida() {
 		super.reiniciaPartida();
-		this.numeroSecreto = (int) (random.nextInt(11));;
+		this.numeroSecreto = (int) (random.nextInt(this.tamano+1));;
 	}
 	
 	@Override
@@ -28,10 +29,11 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 		boolean resultado;
 		boolean busqueda = true;
 		String cadena;
+		Scanner entrada;
 		reiniciaPartida();
 		System.out.println("Adivina un nœmero entre el 0 y el 10");
 		while (busqueda) {
-			Scanner entrada = new Scanner(System.in);
+			entrada = new Scanner(System.in);
 			numero = entrada.nextInt();
 			if (validaNumero(numero)) {
 				if (numero == this.numeroSecreto) {
@@ -76,6 +78,18 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
 	@Override
 	public void muestraInfo() {
 		System.out.println("El juego consiste en adivinar un nœmero del 0 al 10. Para ello, tienes 3 intentos");
+	}
+	
+	public void setNumeroSecreto(int numero) {
+		this.numeroSecreto = numero;
+	}
+	
+	public int getNumeroSecreto() {
+		return this.numeroSecreto;
+	}
+	
+	public int getTamano() {
+		return this.tamano;
 	}
 	
 }

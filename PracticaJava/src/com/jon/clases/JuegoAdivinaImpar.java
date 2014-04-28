@@ -2,13 +2,26 @@ package com.jon.clases;
 
 public class JuegoAdivinaImpar extends JuegoAdivinaNumero {
 
+	private int numeroSecreto;
+	private int tamano;
+	
 	public JuegoAdivinaImpar(int vidas) {
 		super(vidas);
 	}
 	
 	public void reiniciaPartida() {
 		super.reiniciaPartida();
-		// Pasar un numero impar
+		this.numeroSecreto = super.getNumeroSecreto();
+		this.tamano = super.getTamano();
+		if (this.numeroSecreto % 2 == 0) {
+			if (this.numeroSecreto == this.tamano) {
+				this.numeroSecreto = 1;
+			}
+			else {
+				this.numeroSecreto++;
+			}
+		}
+		super.setNumeroSecreto(this.numeroSecreto);
 	}
 	
 	public boolean validaNumero(int numero) {
