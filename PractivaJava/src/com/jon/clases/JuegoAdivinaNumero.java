@@ -58,5 +58,15 @@ public class JuegoAdivinaNumero extends Juego implements InterfazJuego {
 	public boolean validaNumero(int numero) {
 		return true;
 	}
+
+	@Override
+	public void muestraNombre() {
+		System.out.println("Adivina un nœmero");
+	}
+
+	@Override
+	public void muestraInfo() {
+		System.out.println("El juego consiste en adivinar un nœmero del 0 al 10. Para ello, tienes 3 intentos");
+	}
 	
 }

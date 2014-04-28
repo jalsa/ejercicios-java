@@ -14,4 +14,8 @@ public interface InterfazJuego {
 	
 	public abstract void juega();
 	
+	public void muestraNombre();
+	
+	public void muestraInfo();
+	
 }
