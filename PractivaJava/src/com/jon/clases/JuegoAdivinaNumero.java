@@ -1,16 +1,26 @@
 package com.jon.clases;
 
+import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 import com.jon.interfaces.Jugable;
 
 public class JuegoAdivinaNumero extends Juego implements Jugable {
 
+	Date data = new Date();
+	Random random = new Random(data.getTime());
 	private int numeroSecreto;
 	
-	public JuegoAdivinaNumero(int vidas, int numero) {
+	public JuegoAdivinaNumero(int vidas) {
 		super(vidas);
-		this.numeroSecreto = numero;
+		this.numeroSecreto = (int) (random.nextInt(11));
+		System.out.println(this.numeroSecreto);
+	}
+	
+	public void reiniciaPartida() {
+		super.reiniciaPartida();
+		this.numeroSecreto = (int) (random.nextInt(11));;
 	}
 	
 	@Override

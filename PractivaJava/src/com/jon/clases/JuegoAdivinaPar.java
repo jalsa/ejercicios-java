@@ -2,8 +2,8 @@ package com.jon.clases;
 
 public class JuegoAdivinaPar extends JuegoAdivinaNumero {
 
-	public JuegoAdivinaPar(int vidas, int numero) {
-		super(vidas, numero);
+	public JuegoAdivinaPar(int vidas) {
+		super(vidas);
 	}
 	
 	public boolean validaNumero(int numero) {

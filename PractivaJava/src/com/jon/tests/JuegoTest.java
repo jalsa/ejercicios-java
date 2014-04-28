@@ -26,12 +26,10 @@ public class JuegoTest {
 	
 	@Before
 	public void setUp() {
-		//juego = new Juego(5);
-		//juego1 = new Juego(5);
 		juegos = new ArrayList<Jugable>(3);
-		juegoA = new JuegoAdivinaNumero(3, 2);
-		juegoP = new JuegoAdivinaPar(3, 4);
-		juegoI = new JuegoAdivinaImpar(3, 7);
+		juegoA = new JuegoAdivinaNumero(3);
+		juegoP = new JuegoAdivinaPar(3);
+		juegoI = new JuegoAdivinaImpar(3);
 		juegos.add(juegoA);
 		juegos.add(juegoP);
 		juegos.add(juegoI);
