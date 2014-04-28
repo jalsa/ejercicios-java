@@ -12,12 +12,14 @@ public class EmpresaTest {
 	
 	Empresa empr;
 	Empleado empl, empl1;
+	Ejecutivo ej;
 
 	@Before
 	public void setUp() {
 		empr = new Empresa("Caf", 20);
 		empl = empr.nuevoEmpleado("Patxi", 1000);
 		empl1 = empr.nuevoEmpleado("Pello", 1500);
+		ej = new Ejecutivo(empr, "Antxon", 2000);
 	}
 	
 	@Test
@@ -45,6 +47,9 @@ public class EmpresaTest {
 		assertEquals("Empleado 2", "1Pello1500", empl1.toString());
 		empl1.aumentarSueldo(20);
 		assertEquals("Empleado 2", 31500, empl1.getSueldo());
+		assertEquals("Ejecutivo 1", "Este empleado es un ejecutivo", ej.toString());
+		ej.asignaPresupuesto(2500);
+		assertEquals("Ejecutivo 1", 2500, ej.getPresupuesto());
 	}
 
 }
