@@ -11,7 +11,7 @@ import com.jon.excepciones.Excepcion;
 public class EmpresaTest {
 	
 	Empresa empr;
-	Empleado empl, empl1;
+	Empleado empl, empl1, empl2;
 	Ejecutivo ej;
 
 	@Before
@@ -20,6 +20,8 @@ public class EmpresaTest {
 		empl = empr.nuevoEmpleado("Patxi", 1000);
 		empl1 = empr.nuevoEmpleado("Pello", 1500);
 		ej = new Ejecutivo(empr, "Antxon", 2000);
+		empl2 = empr.nuevoEmpleado("Antxon", 2000);
+		empl2.ascender();
 	}
 	
 	@Test
@@ -31,7 +33,7 @@ public class EmpresaTest {
 		} catch (Excepcion e) {
 			System.out.println(e.getMessage());
 		}
-		assertEquals("Empresa 1", 2, empr.getContador());
+		assertEquals("Empresa 1", 3, empr.getContador());
 		try {
 			assertEquals("Empresa 1", empl1, empr.getEmpleado(1));
 		} catch (Excepcion e) {
@@ -47,9 +49,13 @@ public class EmpresaTest {
 		assertEquals("Empleado 2", "1Pello1500", empl1.toString());
 		empl1.aumentarSueldo(20);
 		assertEquals("Empleado 2", 31500, empl1.getSueldo());
-		assertEquals("Ejecutivo 1", "Este empleado es un ejecutivo", ej.toString());
-		ej.asignaPresupuesto(2500);
-		assertEquals("Ejecutivo 1", 2500, ej.getPresupuesto());
+		try {
+			assertEquals("Ejecutivo 1", "Este empleado es un ejecutivo", empr.getEmpleado(2).toString());
+			((Ejecutivo) empr.getEmpleado(2)).asignaPresupuesto(2500);
+			assertEquals("Ejecutivo 1", 2500, ((Ejecutivo) empr.getEmpleado(2)).getPresupuesto());
+		} catch (Excepcion e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

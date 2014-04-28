@@ -2,7 +2,7 @@ package com.jon.clases;
 
 import com.jon.interfaces.InterfazEmpleado;
 
-public class Empleado implements InterfazEmpleado{
+public class Empleado implements InterfazEmpleado {
 	
 	protected final Empresa empresa;
 	protected String nombre;

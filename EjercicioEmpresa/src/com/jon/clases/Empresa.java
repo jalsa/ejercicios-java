@@ -26,10 +26,6 @@ public class Empresa implements InterfazEmpresa {
 		return this.tamano;
 	}
 	
-	/*public void setEmpleado(Empleado empleado) {
-		this.empleados.add(empleado);
-	}*/
-	
 	protected void validateException(int num) throws Excepcion {
 		if (num >= contador) {
 			throw new Excepcion("Nœmero no v‡lido: es mayor que los empleados de la empresa");

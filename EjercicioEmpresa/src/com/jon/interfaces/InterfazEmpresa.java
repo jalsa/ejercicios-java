@@ -10,8 +10,6 @@ public interface InterfazEmpresa {
 	
 	public int getTamano();
 	
-	//public void setEmpleado(Empleado empleado);
-	
 	public Empleado getEmpleado(int num) throws Excepcion;
 	
 	public void despideEmpleado(int num);
