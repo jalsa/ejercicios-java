@@ -7,11 +7,12 @@ import org.junit.Test;
 
 import com.jon.clases.*;
 import com.jon.excepciones.Excepcion;
+import com.jon.interfaces.InterfazEmpleado;
 
 public class EmpresaTest {
 	
 	Empresa empr;
-	Empleado empl, empl1, empl2;
+	InterfazEmpleado empl, empl1, empl2;
 	Ejecutivo ej;
 
 	@Before

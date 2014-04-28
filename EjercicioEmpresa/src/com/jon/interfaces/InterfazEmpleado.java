@@ -14,7 +14,11 @@ public interface InterfazEmpleado {
 	
 	@Override
 	public String toString();
+	
+	public void aumentarSueldo(int n);
 
 	public void despedir();
+	
+	public void ascender();
 	
 }

@@ -1,6 +1,8 @@
 package com.jon.clases;
 
-public class Ejecutivo extends Empleado {
+import com.jon.interfaces.InterfazEjecutivo;
+
+public class Ejecutivo extends Empleado implements InterfazEjecutivo {
 
 	private int presupuesto;
 	

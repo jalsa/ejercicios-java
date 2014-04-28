@@ -1,10 +1,11 @@
 package com.jon.clases;
 
 import com.jon.interfaces.InterfazEmpleado;
+import com.jon.interfaces.InterfazEmpresa;
 
 public class Empleado implements InterfazEmpleado {
 	
-	protected final Empresa empresa;
+	protected final InterfazEmpresa empresa;
 	protected String nombre;
 	protected int sueldo;
 	protected final int numero;
@@ -13,6 +14,7 @@ public class Empleado implements InterfazEmpleado {
 		this.empresa = empresa;
 		this.nombre = nombre;
 		this.sueldo = sueldo;
+		// Hacerlo con id-s œnicos
 		this.numero = this.empresa.getContador();
 	}
 	
@@ -55,10 +57,11 @@ public class Empleado implements InterfazEmpleado {
 
 	public void despedir() {
 		this.empresa.despideEmpleado(this.numero);
+		// Borrar datos de empleado
 	}
 	
 	public void ascender() {
-		Ejecutivo ej = new Ejecutivo(this.empresa, this.nombre, this.sueldo, this.numero);
+		Ejecutivo ej = new Ejecutivo((Empresa) this.empresa, this.nombre, this.sueldo, this.numero);
 		this.empresa.ascender(this.numero, ej);
 	}
 
