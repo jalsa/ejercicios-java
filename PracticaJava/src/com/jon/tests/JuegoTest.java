@@ -2,6 +2,7 @@ package com.jon.tests;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
@@ -38,27 +39,22 @@ public class JuegoTest {
 		juegos.add(juegoA);
 		juegos.add(juegoP);
 		juegos.add(juegoI);
-		while (j == null) {
-			try {
-				j = Application.elijeJuego();
-			} catch (JuegoException e) {
-				System.out.println(e.getMessage());
-			}
-		}
-		Application.continuar(j);
 	}
 	
 	@Test
 	public void test() {
-		assertEquals("Juego 1", 5, juegos.get(0).obtenerVidasRestantes());
+		assertEquals("Juego 1", 3, juegos.get(0).obtenerVidasRestantes());
 		assertEquals("Juego 1", true, juegos.get(0).quitaVida());
-		assertEquals("Juego 1", 4, juegos.get(0).obtenerVidasRestantes());
-		assertEquals("Juego 2", 5, juegos.get(1).obtenerVidasRestantes());
-		assertEquals("Juego 1", 4, juegos.get(0).obtenerVidasRestantes());
+		assertEquals("Juego 1", 2, juegos.get(0).obtenerVidasRestantes());
+		assertEquals("Juego 2", 3, juegos.get(1).obtenerVidasRestantes());
+		assertEquals("Juego 1", 2, juegos.get(0).obtenerVidasRestantes());
 		juegos.get(0).reiniciaPartida();
-		assertEquals("Juego 1", 5, juegos.get(0).obtenerVidasRestantes());
+		assertEquals("Juego 1", 3, juegos.get(0).obtenerVidasRestantes());
 		juegos.get(0).actualizaRecord();
 		juegos.get(1).actualizaRecord();
+		
+		ByteArrayInputStream in = new ByteArrayInputStream("0".getBytes());
+		
 	}
 
 }
