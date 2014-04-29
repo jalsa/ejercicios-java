@@ -7,6 +7,7 @@ import com.jon.clases.JuegoAdivinaImpar;
 import com.jon.clases.JuegoAdivinaNumero;
 import com.jon.clases.JuegoAdivinaPar;
 import com.jon.excepciones.JuegoException;
+import com.jon.factories.FactoriaJuegos;
 import com.jon.interfaces.Jugable;
 
 public class Application {
@@ -46,9 +47,9 @@ public class Application {
 		if (primero == 1) {
 			juegos = new Vector<Jugable>(3);
 			infoVector(juegos);
-			juegoA = new JuegoAdivinaNumero(3);
-			juegoP = new JuegoAdivinaPar(3);
-			juegoI = new JuegoAdivinaImpar(3);
+			juegoA = FactoriaJuegos.getJuegoAdivinaNumero();
+			juegoP = FactoriaJuegos.getJuegoAdivinaPar();
+			juegoI = FactoriaJuegos.getJuegoAdivinaImpar();
 			juegos.add(juegoA);
 			juegos.add(juegoP);
 			juegos.add(juegoI);
