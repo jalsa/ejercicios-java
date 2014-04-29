@@ -26,6 +26,15 @@ public class Application {
 	static Jugable j;
 	
 	public static void main(String[] args) {
+		juegos = new Vector<Jugable>(3);
+		infoVector(juegos);
+		juegoA = FactoriaJuegos.getJuegoAdivinaNumero();
+		juegoP = FactoriaJuegos.getJuegoAdivinaPar();
+		juegoI = FactoriaJuegos.getJuegoAdivinaImpar();
+		juegos.add(juegoA);
+		juegos.add(juegoP);
+		juegos.add(juegoI);
+		infoVector(juegos);
 		inicializar();
 	}
 	
@@ -58,18 +67,6 @@ public class Application {
 	}
 	
 	public static Jugable elijeJuego() throws JuegoException {
-		if (primero == 1) {
-			juegos = new Vector<Jugable>(3);
-			infoVector(juegos);
-			juegoA = FactoriaJuegos.getJuegoAdivinaNumero();
-			juegoP = FactoriaJuegos.getJuegoAdivinaPar();
-			juegoI = FactoriaJuegos.getJuegoAdivinaImpar();
-			juegos.add(juegoA);
-			juegos.add(juegoP);
-			juegos.add(juegoI);
-			infoVector(juegos);
-			primero = 0;
-		}
 		System.out.println("Elije uno de estos juegos:\n");
 		System.out.println("0: Adivinar un numero\n");
 		System.out.println("1: Adivinar un numero par\n");
