@@ -12,28 +12,42 @@ import com.jon.interfaces.Jugable;
 
 public class Application {
 
-	JuegoAdivinaNumero juegoA;
-	JuegoAdivinaPar juegoP;
-	JuegoAdivinaImpar juegoI;
-	Vector<Jugable> juegos;
-	String scan;
-	int numero;
-	int primero = 1;
+	static JuegoAdivinaNumero juegoA;
+	static JuegoAdivinaPar juegoP;
+	static JuegoAdivinaImpar juegoI;
+	static Vector<Jugable> juegos;
+	static String scan;
+	static int numero;
+	static int primero = 1;
 	boolean repetir = true;
-	Scanner entrada;
-	int contador = 0;
+	static Scanner entrada;
+	static int contador = 0;
+	static int respuesta;
+	static Jugable j;
 	
 	public static void main(String[] args) {
-		
+		inicializar();
 	}
 	
-	protected void validateException(int num) throws JuegoException {
+	public static void inicializar() {
+		j = null;
+		while (j == null) {
+			try {
+				j = elijeJuego();
+			} catch (JuegoException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		continuar(j);
+	}
+	
+	protected static void validateException(int num) throws JuegoException {
 		if (num != 0 && num != 1 && num != 2) {
 			throw new JuegoException("Nœmero no v‡lido: debe de ser entre 0 y 2");
 		}
 	}
 	
-	public void infoVector(Vector<Jugable> v) {
+	public static void infoVector(Vector<Jugable> v) {
 		for (int i=0; i<v.size(); i++) {
 			if (v.get(i) != null) {
 				contador++;
@@ -43,7 +57,7 @@ public class Application {
 		contador = 0;
 	}
 	
-	public Jugable elijeJuego() throws JuegoException {
+	public static Jugable elijeJuego() throws JuegoException {
 		if (primero == 1) {
 			juegos = new Vector<Jugable>(3);
 			infoVector(juegos);
@@ -75,6 +89,18 @@ public class Application {
 			numero = Integer.parseInt(scan);
 		}
 		return juegos.get(numero);
+	}
+	
+	public static void continuar(Jugable j) {
+		j.muestraNombre();
+		j.muestraInfo();
+		j.juega();
+		System.out.println("ÀDesea jugar de nuevo?\n0: S’\n1: No");
+		entrada = new Scanner(System.in);
+		respuesta = entrada.nextInt();
+		if (respuesta == 0) {
+			inicializar();
+		}
 	}
 	
 }
