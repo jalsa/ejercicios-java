@@ -15,6 +15,7 @@ public class Application {
 	JuegoAdivinaPar juegoP;
 	JuegoAdivinaImpar juegoI;
 	Vector<Jugable> juegos;
+	String scan;
 	int numero;
 	int primero = 1;
 	boolean repetir = true;
@@ -59,11 +60,18 @@ public class Application {
 		System.out.println("1: Adivinar un numero par\n");
 		System.out.println("2: Adivinar un numero impar\n");
 		entrada = new Scanner(System.in);
-		numero = entrada.nextInt();
+		scan = entrada.next();
+		try {
+			numero = Integer.parseInt(scan);
+		} catch (NumberFormatException e) {
+			System.out.println(e.getMessage());
+			numero = 100;
+		}
 		while (numero != 0 && numero != 1 && numero != 2) {
 			validateException(numero);
 			entrada = new Scanner(System.in);
-			numero = entrada.nextInt();
+			scan = entrada.next();
+			numero = Integer.parseInt(scan);
 		}
 		return juegos.get(numero);
 	}
